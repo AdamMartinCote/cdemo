@@ -6,7 +6,7 @@ MKDIR_P   = mkdir -p
 PROG_NAME = primechecker
 
 ODIR      = build
-_OBJ      = prime.o simpleprime.o
+_OBJ      = prime.o simpleprime.o aks.o
 OBJ       = $(patsubst %, $(ODIR)/%,$(_OBJ))
 
 

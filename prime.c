@@ -6,6 +6,7 @@
 #include <inttypes.h>
 
 #include "simpleprime.h"
+#include "aks.h"
 
 static void
 exit_usage(const char *const progname)
@@ -17,14 +18,6 @@ exit_usage(const char *const progname)
                 "\t-m <method>\tmethod [simple|AKS]\n"
                 "\t-n <number>\tnumber\n");
         exit(1);
-}
-
-
-static bool
-compute_prime_AKS(uint64_t number)
-{
-        puts("not implemented");
-        exit(0);
 }
 
 int
