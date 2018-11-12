@@ -21,7 +21,7 @@ exit_usage(const char *const progname)
 }
 
 int
-main (int argc, char* argv[static 2])
+main (int argc, char* argv[])
 {
         int opt;
         uint64_t n = 0;
@@ -37,7 +37,8 @@ main (int argc, char* argv[static 2])
                         if (strcmp("simple", optarg) == 0) {
                                 function_p = compute_prime_simple;
                         } else
-                        if (strcmp("AKS", optarg) == 0) {
+                        if (strcmp("AKS", optarg) == 0 ||
+                            strcmp("aks", optarg) == 0) {
                                 function_p = compute_prime_AKS;
                         }
                         break;
@@ -51,7 +52,7 @@ main (int argc, char* argv[static 2])
         if (n < 2 || n > UINT64_MAX || !function_p)
                 exit_usage(argv[0]);
         bool isPrime = function_p(n);
-        printf("The number %d is %s\n",
+        printf("The number %"PRIu64" is %s\n",
                         n,
                         isPrime ? "prime" : "not prime");
 }
